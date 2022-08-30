@@ -27,7 +27,7 @@ const Contact= (props)=>
         (
             <form  onSubmit={handleSubmit}  >
 <div>
-    <input type={"text"} name="firstName" placeholder="first Name"  onChange={handleChange}
+    <input type={"text"} name="firstName" placeholder="first Name"  onChange={handleChange} 
     value={values.firstName} onBlur={handleBlur} />
      <div style={{color:'red'}}>{errors.firstName&& touched.firstName&& errors.firstName}</div>
 
@@ -40,7 +40,7 @@ const Contact= (props)=>
 </div>
 
 <div>
- <input type="text" name="hearFromUs"  maxLength="100" placeholder="How did you hear from us" 
+ <input type="text" name="hearFromUs"  maxLength="100" placeholder="How did  you hear from  uss" 
     value={values.hearFromUs} onBlur={handleBlur}  onChange={handleChange}/>
 <div style={{color:'red'}}>{errors.hearFromUs&& touched.hearFromUs&& errors.hearFromUs}</div>
     
