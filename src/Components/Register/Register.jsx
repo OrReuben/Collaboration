@@ -2,7 +2,7 @@ import "./Register.css";
 import { Formik, Field} from "formik";
 import * as Yup from "yup";
 
-function Register() {
+function Register(props) {
   const schema = Yup.object().shape({
     username: Yup.string()
       .required("Username is required!")
@@ -47,12 +47,13 @@ function Register() {
               name="username"
               placeholder="Username"
               onChange={handleChange}
-              value={values.email}
+              value={values.username}
               onBlur={handleBlur}
             />
             <p style={{ color: "red" }}>
               {errors.username && touched.username && errors.username}
             </p>
+            <div>{props.userName}</div>
             <label for="psw"> <b>Password</b></label>
             <input id="psw"
               type="password"
@@ -89,7 +90,7 @@ function Register() {
              <br />
             </div>
             <p style={{color:"red"}}>{errors.checkbox && touched.checkbox && errors.checkbox}</p>
-            <button className="registerbtn" type="submit">Register</button>
+            <button className="registerbtn" type="submit" onClick={() => {props.setUserName(values.username)}}>Register</button>
           </form>
         )}
       </Formik>

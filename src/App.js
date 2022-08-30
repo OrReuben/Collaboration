@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import './App.css';
 import Register from './Components/Register/Register';
 
+
 function App() {
+  const [userName,setUserName] = useState('')
+
   return (
     <div className="App">
-      <Register />
+      <Register 
+      userName = {userName}
+      setUserName = {setUserName}
+      />
     </div>
   );
 }
